@@ -1,0 +1,16 @@
+services:
+  retail-app:
+    image: retail-app:4.2.0
+    container_name: retail-app
+    ports:
+      - "8081:8081"
+    environment:
+      APP_VERSION: "4.2.0"
+      PAYMENT_STATUS: "FAILED"
+    networks:
+      - retail-network
+    restart: unless-stopped
+
+networks:
+  retail-network:
+    driver: bridge
