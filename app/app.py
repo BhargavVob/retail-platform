@@ -24,5 +24,16 @@ def health():
         "version": VERSION
     }), 200
 
+@app.route("/products")
+def products():
+    return jsonify({
+        "products": [
+            {"id": 1, "name": "Laptop"},
+            {"id": 2, "name": "Phone"}
+        ]
+    })
+
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8081)
